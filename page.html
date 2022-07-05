@@ -31,14 +31,14 @@
     if (localStorage.getItem("Username")) {
         document.getElementById("name").innerHTML = localStorage.getItem("Username")
     } else {
-        location.href = "./form.html";
+        location.href = "./index.html";
     }
 
 
     document.getElementById("logoutBtn").addEventListener('click',
         () => {
             localStorage.clear();
-            location.href = "./form.html";
+            location.href = "./index.html";
         })
 
 </script>
