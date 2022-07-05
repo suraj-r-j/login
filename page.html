@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WELCOME TO SUCCESSFUL LOGIN PAGE</h1>
+
+    <HR>
+    <p style="background-color: aquamarine;">Hi <span style="background-color:blue" id="name"></span></p>
+
+    <button id="logoutBtn">logout</button>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium pariatur fugit officia consequuntur eum
+        quisquam officiis adipisci dolorum in esse quia repudiandae, ipsam unde odio exercitationem eos, maxime
+        consectetur iure.</P>
+
+</body>
+
+<script>
+
+    if (localStorage.getItem("Username")) {
+        document.getElementById("name").innerHTML = localStorage.getItem("Username")
+    } else {
+        location.href = "./form.html";
+    }
+
+
+    document.getElementById("logoutBtn").addEventListener('click',
+        () => {
+            localStorage.clear();
+            location.href = "./form.html";
+        })
+
+</script>
+
+</html>

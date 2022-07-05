@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFORMATION</title>
+
+    <style type="text/css">
+        .one {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        div {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 0 auto;
+            padding: 120px;
+            box-sizing: border-box;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="one"> WELCOME TO LOGIN</h1>
+
+    <div>
+        username:<br>
+        <input type="text" name="text" id="username">
+        <br><br>
+        password:<br>
+        <input type="pass" name="text" id="password">
+        <br><br>
+        <button onclick="login()">Submit</button>
+
+    </div>
+    <script type="text/javascript">
+        function login() {
+            var uname = document.getElementById('username').value;
+            var upass = document.getElementById('password').value;
+            console.log(uname + " " + upass)
+
+
+            var data = [
+                {
+                    "name": "suraj",
+                    "pass": "a123"
+                },
+                {
+                    "name": "vivek",
+                    "pass": "v123"
+                },
+                {
+                    "name": "rohit",
+                    "pass": "r123"
+                }
+            ]
+
+            //  function fname(){
+
+            //  }
+
+            //  ()=>{
+
+            //  }
+
+            const user = data.find((item) => item.name === uname && item.pass === upass);
+
+            console.log("this is user : " + user)
+            if (user) {
+                localStorage.setItem("Username",user.name);
+                localStorage.setItem("Password",user.pass);
+                location.href = "./page.html";
+            }
+            else {
+                window.alert("login failed")
+            }
+        }   
+    </script>
+</body>
+
+</html>
